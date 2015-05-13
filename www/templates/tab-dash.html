@@ -4,24 +4,17 @@
       <div class="item item-divider">Recent Updates</div>
       <div class="item item-body">
         <div>
-          There is a fire in <b>sector 3</b>
+          Press <b>Scan</b> to scan a QR Code
+          <button class="button button-positive button-block" ng-click="scanBar(result)">Scan</button>
         </div>
       </div>
     </div>
-    <div class="list card">
-      <div class="item item-divider">Health</div>
+    <div class="list card" ng-show="result.cancelled==false">
+      <div class="item item-divider">Result</div>
       <div class="item item-body">
-        <div>
-          You ate an apple today!
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Upcoming</div>
-      <div class="item item-body">
-        <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
-        </div>
+        <p>Result: {{result.text}}</p>
+        <p>Format: {{result.format}}</p>
+        <p>Cancelled: {{result.cancelled}}</p>
       </div>
     </div>
   </ion-content>
